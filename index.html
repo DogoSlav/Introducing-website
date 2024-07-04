@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nejvetší Frajer</title>
+</head>
+<body>
+    <div class="image-container">
+        <img src="photos/profile_pic.jpg" id="prof-img" alt="Profile_picture">
+
+        <div class="text-overlay">
+            <p>
+                <span class="profile-name" id="prof-name">Majsner </span>
+                <span class="profile-age" id="prof-age">  18</span>
+            </p>
+        </div>
+        <div class="paragraph-under-image" id="asking_table">
+            <div class="text-under-image">
+                <h1>Do you like drum and bass?</h1>
+                <div class="buttno-line"> 
+                    <button onclick="YesButton()" class="button yes-button">Yes</button>
+                    <button onclick="NoButton()" class="button no-button">No</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="paragraph-under-image hidden" id="yes_table">
+            <div class="text-under-image">
+                <h1> 🫶 here you go  🫶</h1>
+                <table>
+                    <tr>
+                        <td><img src="photos/Instagram_logo.png" class="img-logo" alt="instagram"></td>
+                        <td><a href="instagram://user?username=filip_manas/">@filip_manas</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="photos/snapchat_logo.png" class="round-image img-logo" alt="snapchat"></td>
+                        <td><a href="snapchat://add/filipnomanas">@filipnomanas</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="photos/messenger_logo.png" class="round-image img-logo" alt="messenger"></td>
+                        <td><a href="https://m.me/filip.manas.50">@Filip</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="photos/Spotify_logo.png" class="round-image img-logo" alt="spotify"></td>
+                        <td><a href="https://open.spotify.com/user/9ft26t9qmysiqeh56150lrypn?si=6cd5a906016b46b3">@Filipnomanas</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="photos/onlyfans_logo.png" class="round-image img-logo" alt="onlyfans"></td>
+                        <td><a href="https://puginarug.com/"> @Predátor_Majsner</a><b> 18+!</b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="paragraph-under-image hidden" id="no_table">
+            <div class="text-under-image">
+                <h1>Tak táhni do piči :)</h1>
+                <img src="photos/fuck_you.png" class="img-fuck-you">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function YesButton(){
+            var askingTable = document.getElementById('asking_table');
+            var YesTable = document.getElementById('yes_table');
+
+            askingTable.classList.add('fade-out');
+            askingTable.addEventListener('animationend', function() {
+                askingTable.classList.add('hidden');
+                YesTable.classList.remove('hidden');
+                YesTable.classList.add('fade-in');
+            }, {once: true});
+
+        }
+
+        function NoButton(){
+            var askingTable = document.getElementById('asking_table');
+            var NoTable = document.getElementById('no_table');
+            var profileText = document.getElementById('prof-name');
+            var profileAge = document.getElementById('prof-age');
+            var profileImg = document.getElementById('prof-img');
+
+            profileImg.classList.add('fade-out');
+            profileAge.classList.add('fade-out');
+            profileText.classList.add('fade-out')
+            askingTable.classList.add('fade-out');
+
+
+            profileImg.addEventListener('animationend', function() {
+                profileImg.classList.add('hidden');
+                profileAge.classList.add('hidden');
+                profileText.classList.add('hidden');
+                askingTable.classList.add('hidden');
+                NoTable.classList.remove('hidden');
+                NoTable.classList.add('fade-in-slow');
+            }, { once: true });
+
+        }
+    </script>
+
+</body>
+</html>
